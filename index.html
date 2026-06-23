@@ -1,0 +1,825 @@
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA LUXE - AI Private Wealth Intelligence</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cinzel for luxury headers & Sarabun for professional Thai text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sarabun', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                        luxury: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        luxe: {
+                            gold: '#DFBA73',       // Champagne Gold
+                            goldLight: '#F5E6C4',  // Light Champagne Gold
+                            goldDark: '#9F7C38',   // Deep Gold
+                            black: '#080809',      // Deepest Obsidian Black
+                            card: '#111113',       // Dark Charcoal/Obsidian Card
+                            border: '#242428',     // Muted Metallic Border
+                            textGray: '#8E8E93'    // Premium iOS Gray
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-text-glow {
+            background: linear-gradient(135deg, #FFFFFF 0%, #F5E6C4 50%, #9F7C38 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .luxury-gradient-bg {
+            background: radial-gradient(circle at top right, rgba(223, 186, 115, 0.08) 0%, rgba(8, 8, 9, 1) 70%);
+        }
+        .ai-pulse-wave {
+            animation: pulse-ring 2.5s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="bg-luxe-black text-gray-200 font-sans min-h-screen pb-16 luxury-gradient-bg selection:bg-luxe-gold/30">
+
+    <!-- แถบเมนูด้านบนสไตล์โรงแรม 6 ดาว -->
+    <header class="sticky top-0 z-50 bg-luxe-black/90 backdrop-blur-md border-b border-luxe-border px-6 py-5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 border-2 border-luxe-gold rounded-full flex items-center justify-center bg-gradient-to-br from-luxe-card to-luxe-black shadow-lg shadow-luxe-gold/10">
+                    <span class="text-luxe-gold font-luxury font-bold text-2xl tracking-widest">A</span>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-luxury font-semibold tracking-[0.2em] gold-text-glow">AURA LUXE</h1>
+                    <p class="text-[9px] uppercase tracking-[0.4em] text-luxe-gold/80 font-semibold">AI Private Wealth Management</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <div class="text-right hidden md:block">
+                    <p class="text-[9px] font-mono text-luxe-textGray tracking-widest uppercase">ENCRYPTED CONNECTION</p>
+                    <p class="text-xs font-mono text-luxe-gold font-semibold">SECURE NODE // AVIE v3.0</p>
+                </div>
+                <div class="h-8 w-[1px] bg-luxe-border hidden md:block"></div>
+                <!-- AI Avie Mini Profile -->
+                <div class="flex items-center space-x-3 bg-luxe-card border border-luxe-border px-4 py-2 rounded-full shadow-inner">
+                    <div class="relative">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-luxe-goldDark to-luxe-goldLight p-[1px] overflow-hidden">
+                            <div class="w-full h-full rounded-full bg-luxe-black flex items-center justify-center">
+                                <!-- ภาพอวาตาร์ตัวแทน AI สาวสวยเอเชีย -->
+                                <span class="text-base">👩🏻‍💼</span>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-luxe-card"></span>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-white tracking-wide">AVIE AI</p>
+                        <p class="text-[9px] text-luxe-gold font-mono uppercase">LEARNING ACTIVE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- โซนที่ 1 (ซ้าย-กลาง): การเงิน และ Dashboard (8/12 Cols) -->
+        <div class="lg:col-span-8 space-y-8">
+            
+            <!-- การกางข้อมูล สรุป ประจำวัน เดือน ปี (Real-time Financial Vault) -->
+            <section class="bg-luxe-card border border-luxe-border rounded-3xl p-8 relative overflow-hidden shadow-2xl">
+                <!-- เส้นใยแสงสีทองหรูหลังการ์ด -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-luxe-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+                
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+                    <div>
+                        <h2 class="text-md font-luxury text-luxe-gold tracking-[0.15em] uppercase">FINANCIAL PORTFOLIO VAULT</h2>
+                        <p class="text-xs text-luxe-textGray">กางประวัติวิเคราะห์ยอดกระแสเงินเข้าออกอย่างแม่นยำ</p>
+                    </div>
+                    <!-- ระบบเปลี่ยนสรุป ประจำวัน / เดือน / ปี -->
+                    <div class="flex bg-luxe-black p-1 rounded-2xl border border-luxe-border font-mono text-xs w-full sm:w-auto">
+                        <button onclick="setPeriod('day')" id="periodDay" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl transition-all duration-300 text-luxe-textGray font-semibold tracking-wider">DAILY</button>
+                        <button onclick="setPeriod('month')" id="periodMonth" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl transition-all duration-300 text-luxe-black bg-luxe-gold font-semibold tracking-wider">MONTHLY</button>
+                        <button onclick="setPeriod('year')" id="periodYear" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl transition-all duration-300 text-luxe-textGray font-semibold tracking-wider">YEARLY</button>
+                    </div>
+                </div>
+
+                <!-- การแสดงผลตัวเลขทองคำแบบหรูหรา -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-luxe-black/60 rounded-2xl border border-luxe-border relative group hover:border-luxe-gold/30 transition-all duration-300">
+                        <span class="absolute top-4 right-4 text-emerald-500/20 text-xl font-mono">IN</span>
+                        <p class="text-[10px] font-mono text-luxe-textGray tracking-widest uppercase">TOTAL INCOME / รายรับรวม</p>
+                        <h3 id="dashIncome" class="text-3xl font-mono font-bold mt-2 text-white tracking-tight">฿0.00</h3>
+                        <p class="text-[10px] text-emerald-500 font-semibold mt-2 flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> ยอดเงินไหลเข้ากระเป๋า
+                        </p>
+                    </div>
+                    
+                    <div class="p-6 bg-luxe-black/60 rounded-2xl border border-luxe-border relative group hover:border-luxe-gold/30 transition-all duration-300">
+                        <span class="absolute top-4 right-4 text-rose-500/20 text-xl font-mono">OUT</span>
+                        <p class="text-[10px] font-mono text-luxe-textGray tracking-widest uppercase">TOTAL EXPENSES / รายจ่ายรวม</p>
+                        <h3 id="dashExpense" class="text-3xl font-mono font-bold mt-2 text-white tracking-tight">฿0.00</h3>
+                        <p id="expenseRatioBadge" class="text-[10px] text-luxe-gold font-semibold mt-2 flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-luxe-gold"></span> 0% ของรายรับทั้งหมด
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-gradient-to-b from-[#1c1a16] to-luxe-black rounded-2xl border border-luxe-gold/30 relative shadow-lg shadow-luxe-gold/5">
+                        <span class="absolute top-4 right-4 text-luxe-gold/20 text-xl font-mono">NET</span>
+                        <p class="text-[10px] font-mono text-luxe-gold tracking-widest uppercase font-semibold">CASH FLOW / ยอดคงเหลือ</p>
+                        <h3 id="dashBalance" class="text-3xl font-mono font-bold mt-2 text-luxe-goldLight tracking-tight">฿0.00</h3>
+                        <p class="text-[10px] text-gray-400 mt-2 flex items-center gap-1">
+                            ความคล่องตัวทางการเงิน
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ส่วนเพิ่มรายการธุรกรรม และ กราฟสรุปผลคู่ขนาน -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- แดชบอร์ดป้อนธุรกรรมระดับ Private Wealth -->
+                <div class="bg-luxe-card border border-luxe-border rounded-3xl p-6 shadow-xl">
+                    <h3 class="text-md font-luxury text-luxe-gold tracking-wide mb-2 uppercase">SECURE ENTRY / จดบันทึกรายการ</h3>
+                    <p class="text-xs text-luxe-textGray mb-6">กรอกข้อมูลเงินของคุณเพื่อเชื่อมต่อเข้ากับระบบสมองกลของเอวี่</p>
+                    
+                    <form onsubmit="handleLogEntry(event)" class="space-y-4 text-xs">
+                        <!-- เลือกประเภทธุรกรรม -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <button type="button" id="btnExpense" onclick="setEntryType('expense')" class="py-3 rounded-xl bg-luxe-gold text-luxe-black font-bold tracking-wider hover:opacity-90 transition-all shadow-md shadow-luxe-gold/10">EXPENSE / รายจ่าย</button>
+                            <button type="button" id="btnIncome" onclick="setEntryType('income')" class="py-3 rounded-xl bg-luxe-black text-luxe-textGray border border-luxe-border hover:text-white transition-all">INCOME / รายรับ</button>
+                        </div>
+
+                        <!-- ตัวเลขเงินก้อนทองคำ -->
+                        <div>
+                            <label class="block text-[10px] font-mono text-luxe-textGray tracking-wider mb-2">AMOUNT / จำนวนเงิน (บาท)</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-luxe-gold font-mono text-lg">฿</span>
+                                <input type="number" step="any" id="amount" required placeholder="0.00" class="w-full text-2xl font-mono font-bold bg-luxe-black border border-luxe-border rounded-xl pl-9 pr-4 py-3 text-luxe-goldLight focus:outline-none focus:border-luxe-gold transition-all text-center">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <!-- รายละเอียดรายการ -->
+                            <div>
+                                <label class="block text-[10px] font-mono text-luxe-textGray tracking-wider mb-1.5">DETAILS / รายการ</label>
+                                <input type="text" id="details" required placeholder="เช่น ลงทุนกองทุนทองคำ" class="w-full bg-luxe-black border border-luxe-border rounded-xl px-3 py-2.5 text-white text-xs focus:outline-none focus:border-luxe-gold transition-all">
+                            </div>
+                            <!-- หมวดหมู่เกรดหรูหรา -->
+                            <div>
+                                <label class="block text-[10px] font-mono text-luxe-textGray tracking-wider mb-1.5">CATEGORY / หมวดหมู่</label>
+                                <select id="category" class="w-full bg-luxe-black border border-luxe-border rounded-xl px-3 py-2.5 text-white text-xs focus:outline-none focus:border-luxe-gold transition-all">
+                                    <!-- ตัวเลือกปรับตามประเภทธุรกรรมผ่าน JS -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- วันที่ -->
+                        <div>
+                            <label class="block text-[10px] font-mono text-luxe-textGray tracking-wider mb-1.5">DATE / วันที่ระบุรายการ</label>
+                            <input type="date" id="date" required class="w-full bg-luxe-black border border-luxe-border rounded-xl px-3 py-2.5 text-white text-xs focus:outline-none focus:border-luxe-gold transition-all font-mono">
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-luxe-goldDark via-luxe-gold to-luxe-goldLight text-luxe-black font-extrabold rounded-xl text-xs tracking-[0.2em] uppercase hover:shadow-lg hover:shadow-luxe-gold/20 transition-all">
+                            TRANSMIT DATA TO AVIE
+                        </button>
+                    </form>
+                </div>
+
+                <!-- สถิติกราฟสเปกตรัมทองคำ -->
+                <div class="bg-luxe-card border border-luxe-border rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-md font-luxury text-luxe-gold tracking-wide mb-1 uppercase">GOLDEN RATIO SPHERE</h3>
+                        <p class="text-xs text-luxe-textGray">สัดส่วนค่าใช้จ่ายเพื่อจำแนกไลฟ์สไตล์แบบพรีเมียม</p>
+                    </div>
+
+                    <!-- กราฟวงกลม SVG วาดบนบราวน์เซอร์แบบเรียลไทม์ -->
+                    <div class="flex items-center justify-center py-6 relative">
+                        <svg id="pieSvg" class="w-44 h-44 transform -rotate-90 filter drop-shadow-[0_4px_12px_rgba(223,186,115,0.1)]" viewBox="0 0 32 32">
+                            <!-- Background stroke -->
+                            <circle cx="16" cy="16" r="14" fill="transparent" stroke="#1c1c1f" stroke-width="3" />
+                        </svg>
+                        <div class="absolute text-center">
+                            <span class="text-[9px] font-mono text-luxe-textGray tracking-widest uppercase block">Total Expense</span>
+                            <span id="pieCenterTotal" class="text-base font-mono font-bold text-white">฿0</span>
+                        </div>
+                    </div>
+
+                    <!-- รายการอ้างอิงกราฟวงกลม -->
+                    <div id="chartLegend" class="text-xs space-y-2 border-t border-luxe-border/60 pt-4 max-h-[110px] overflow-y-auto no-scrollbar">
+                        <!-- รายการหมวดหมู่จะสร้างโดยอัตโนมัติที่นี่ -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ตารางกางประวัติบัญชีอย่างละเอียดแบบ Luxury Ledger -->
+            <section class="bg-luxe-card border border-luxe-border rounded-3xl p-8 shadow-2xl">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
+                    <div>
+                        <h3 class="text-md font-luxury text-luxe-gold tracking-[0.15em] uppercase">LUXURY TRANSACTION LEDGER</h3>
+                        <p class="text-xs text-luxe-textGray">กางประวัติรายรับรายจ่ายโดยจัดเรียงลำดับเวลาอย่างประณีต</p>
+                    </div>
+                    <!-- ปุ่มคัดกรองข้อมูลอย่างง่ายบนตาราง -->
+                    <div class="flex border border-luxe-border bg-luxe-black rounded-xl p-1 text-[11px] font-mono">
+                        <button onclick="setLedgerFilter('all')" id="filterAll" class="px-3 py-1.5 rounded-lg bg-luxe-gold text-luxe-black font-semibold transition-all">ทั้งหมด</button>
+                        <button onclick="setLedgerFilter('expense')" id="filterExpense" class="px-3 py-1.5 rounded-lg text-luxe-textGray hover:text-white transition-all">รายจ่าย</button>
+                        <button onclick="setLedgerFilter('income')" id="filterIncome" class="px-3 py-1.5 rounded-lg text-luxe-textGray hover:text-white transition-all">รายรับ</button>
+                    </div>
+                </div>
+
+                <!-- ตารางตัวงานจริง -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead>
+                            <tr class="border-b border-luxe-border pb-3 text-luxe-textGray font-mono uppercase tracking-wider">
+                                <th class="pb-3 pl-2">DATE</th>
+                                <th class="pb-3">DETAILS / รายการ</th>
+                                <th class="pb-3 text-center">AI ESTIMATION</th>
+                                <th class="pb-3 text-right">AMOUNT (THB)</th>
+                                <th class="pb-3 text-center">MANAGE</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ledgerTableBody" class="divide-y divide-luxe-border/50">
+                            <!-- แถวจะถูกประมวลสร้างผ่าน JS -->
+                        </tbody>
+                    </table>
+                    
+                    <div id="noDataView" class="hidden text-center py-12 text-luxe-textGray italic">
+                        🚫 ไม่พบธุรกรรมใดในระบบตามช่วงเวลาดังกล่าว
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- โซนที่ 2 (ขวา): AI Avie Intelligence Assistant (4/12 Cols) -->
+        <div class="lg:col-span-4 space-y-8">
+            <section class="bg-gradient-to-b from-luxe-card to-luxe-black border border-luxe-gold/30 rounded-3xl p-6 relative shadow-2xl">
+                <!-- ไฟสัญญาณสถานะ AI โชว์ขีดความพร้อมสูงสุด -->
+                <div class="absolute top-6 right-6 flex items-center space-x-2 bg-luxe-black/60 border border-luxe-border px-3 py-1 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-luxe-gold animate-ping"></span>
+                    <span class="text-[9px] font-mono text-luxe-gold font-bold">AVIE CORE v3.0</span>
+                </div>
+
+                <!-- รูปอวาตาร์ AI สาวสวยเอเชียสุดฉลาดและแอนิเมชันความหรูหรา -->
+                <div class="text-center mt-6 mb-6">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-b from-luxe-gold via-luxe-border to-luxe-black p-[2px] shadow-xl relative flex items-center justify-center">
+                        <!-- วงแหวนชีวภาพพัลส์ -->
+                        <div class="absolute inset-0 rounded-full border border-luxe-gold/40 ai-pulse-wave"></div>
+                        <div class="w-full h-full rounded-full bg-luxe-black flex items-center justify-center text-5xl overflow-hidden shadow-inner">
+                            👩🏻‍💼
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-luxury font-bold tracking-widest text-luxe-goldLight mt-4">NONG AVIE</h3>
+                    <p class="text-[9px] font-mono text-luxe-gold tracking-[0.3em] uppercase">Senior Private Wealth Advisor</p>
+                    
+                    <!-- แถบคลื่นความฉลาดจำลอง (Learning Process Bar) -->
+                    <div class="mt-4 px-6">
+                        <div class="flex justify-between text-[9px] font-mono text-luxe-textGray mb-1">
+                            <span>AVIE KNOWLEDGE CAPACITY</span>
+                            <span id="aiKnowledgeProgress">92%</span>
+                        </div>
+                        <div class="w-full bg-luxe-black h-1 rounded-full overflow-hidden border border-luxe-border/50">
+                            <div id="aiKnowledgeBar" class="bg-luxe-gold h-full transition-all duration-1000" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- กล่องเสียงน้องเอวี่โต้ตอบลูกค้าวีไอพี -->
+                <div class="bg-luxe-black/95 border border-luxe-border/80 rounded-2xl p-4 shadow-inner relative">
+                    <!-- เครื่องหมายอัญประกาศดีไซน์หรู -->
+                    <div class="absolute -top-3 left-4 px-2 bg-luxe-black text-luxe-gold text-xs font-luxury">AVIE SPEAKING</div>
+                    <p id="aiDialogueText" class="text-xs leading-relaxed text-gray-300 mt-2 font-light">
+                        สวัสดีค่ะท่านผู้มีอุปการคุณ ยินดีต้อนรับเข้าสู่ AURA LUXE บริการระดับ Private Wealth ของเราค่ะ เอวี่ทำการ "กางบัญชี" และวิเคราะห์รูปแบบชีวิตทางการเงินของคุณเรียบร้อยแล้วค่ะ ลองกดให้เอวี่ช่วยคัดแยกงบและเสนอจุดตัดเงินออมดูนะคะ!
+                    </p>
+                </div>
+
+                <!-- ชุดควบคุม AI เพื่อประมวลผลระบบสถิติเชิงรุก -->
+                <div class="mt-6 space-y-3">
+                    <button onclick="aiSieveNecessity()" class="w-full py-3 bg-luxe-black text-luxe-gold border border-luxe-gold/50 hover:bg-luxe-gold hover:text-luxe-black font-semibold text-xs rounded-xl tracking-wider transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>🧠 คัดแยก "ค่าใช้จ่ายจำเป็น" vs "ความสุขส่วนตัว"</span>
+                    </button>
+                    <button onclick="aiAdviseBudgetReduction()" class="w-full py-3 bg-gradient-to-r from-luxe-goldDark to-luxe-gold text-luxe-black font-extrabold text-xs rounded-xl tracking-wider transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-luxe-gold/10">
+                        <span>✂️ ขอจุดตัดรายจ่ายและแผนประหยัดเงิน</span>
+                    </button>
+                    <button onclick="aiInteractiveLearning()" class="w-full py-2 bg-luxe-black/40 text-[10px] text-luxe-textGray hover:text-luxe-gold transition-all duration-300 border border-transparent hover:border-luxe-border rounded-xl">
+                        💡 จำลองป้อนคำสอนใหม่แก่เอวี่ (Machine Learning)
+                    </button>
+                </div>
+
+                <!-- บอร์ดแสดงการวิเคราะห์ Insight ของ AI จากการคำนวณ -->
+                <div id="aiReportBox" class="mt-6 p-4 bg-[#141311] border border-luxe-gold/20 rounded-2xl hidden animate-fade-in">
+                    <h4 class="text-xs font-luxury text-luxe-gold font-bold tracking-widest mb-3 uppercase flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-luxe-gold"></span> AVIE INTEL INSIGHT
+                    </h4>
+                    <div id="aiReportContent" class="text-xs leading-relaxed text-gray-300 space-y-3">
+                        <!-- ข้อมูลจากการประมวลผลสมองกล -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- แจ้งเตือนแบบ Custom Toast หน้าตาพรีเมียม -->
+    <div id="luxeToast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-500 bg-luxe-card border-2 border-luxe-gold/40 text-white px-5 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 pointer-events-none text-xs">
+        <span id="toastIcon" class="text-lg">💰</span>
+        <div>
+            <p id="toastMessage" class="font-medium text-luxe-goldLight">ปรับเปลี่ยนข้อมูลระบบสำเร็จ</p>
+        </div>
+    </div>
+
+    <!-- สคริปต์การคำนวณและปัญญาประดิษฐ์อัจฉริยะ -->
+    <script>
+        // ข้อมูลประเภทกลุ่มสินค้าหรูหรา และการแบ่งคุณค่า (Need vs Want)
+        const luxuryCategories = {
+            expense: [
+                { id: 'living', label: 'ที่พักหรู & ดอกเบี้ยอสังหา', icon: '🏰', importance: 'need' },
+                { id: 'dine_out', label: 'อาหารหรู Fine Dining / คลับ', icon: '🥂', importance: 'want' },
+                { id: 'wealth_investment', label: 'สะสมสินทรัพย์ / กองทุนทองคำ', icon: '📈', importance: 'need' },
+                { id: 'fashion_luxury', label: 'แบรนด์เนม / รถสปอร์ต & ประกัน', icon: '🏎️', importance: 'want' },
+                { id: 'health_wellness', label: 'ดูแลสุขภาพ & สปาระดับท็อป', icon: '💆🏻‍♀️', importance: 'need' },
+                { id: 'leisure_travel', label: 'ทริปบินเที่ยวต่างประเทศ / โรงแรม', icon: '✈️', importance: 'want' }
+            ],
+            income: [
+                { id: 'business_profits', label: 'ปันผลธุรกิจ & กำไร', icon: '💼' },
+                { id: 'dividends', label: 'พอร์ตลงทุน & ดอกเบี้ยพันธบัตร', icon: '💎' },
+                { id: 'special_consulting', label: 'ค่าวิชาชีพที่ปรึกษาพิเศษ', icon: '📜' }
+            ]
+        };
+
+        // เฉดสีทองคาสิโนพรีเมียมสำหรับวงกราฟ
+        const goldScalePalette = ['#F5E6C4', '#DFBA73', '#9F7C38', '#73551E', '#C0A060', '#563D10'];
+
+        // โครงสร้างฐานข้อมูลธุรกรรม
+        let transactions = JSON.parse(localStorage.getItem('aura_luxe_ledger')) || [
+            { id: '1', date: '2026-06-21', details: 'เงินปันผลธุรกิจแรกรุ่น', amount: 250000, type: 'income', category: 'business_profits' },
+            { id: '2', date: '2026-06-22', details: 'ดินเนอร์ Omakase ประจำสัปดาห์', amount: 8500, type: 'expense', category: 'dine_out' },
+            { id: '3', date: '2026-06-22', details: 'ซื้อกองทุนทองคำปันผลดุ', amount: 50000, type: 'expense', category: 'wealth_investment' },
+            { id: '4', date: '2026-06-23', details: 'ผ่อนชำระคอนโดเพนท์เฮาส์', amount: 75000, type: 'expense', category: 'living' },
+            { id: '5', date: '2026-06-23', details: 'น้ำหอมสกัดพิเศษแบรนด์หรู', amount: 14500, type: 'expense', category: 'fashion_luxury' }
+        ];
+
+        let entryType = 'expense';
+        let currentPeriod = 'month'; // 'day', 'month', 'year'
+        let ledgerFilter = 'all';    // 'all', 'expense', 'income'
+        let avieBrainLeveL = parseInt(localStorage.getItem('avie_brain_level')) || 92;
+
+        window.onload = function() {
+            // ตั้งค่าวันที่ค่าเริ่มต้นเป็นวันนี้ในระบบ
+            document.getElementById('date').value = new Date().toISOString().split('T')[0];
+            
+            // ปรับระดับบาร์ความฉลาดของเอวี่
+            updateAvieBrainProgress(0);
+
+            // รีเฟรชและคำนวณหน้าจอรวม
+            refreshLuxeApp();
+        };
+
+        // สลับประเภทอินพุตของฟอร์ม
+        function setEntryType(type) {
+            entryType = type;
+            const btnEx = document.getElementById('btnExpense');
+            const btnIn = document.getElementById('btnIncome');
+
+            if (type === 'expense') {
+                btnEx.className = "py-3 rounded-xl bg-luxe-gold text-luxe-black font-bold tracking-wider hover:opacity-90 transition-all shadow-md shadow-luxe-gold/10";
+                btnIn.className = "py-3 rounded-xl bg-luxe-black text-luxe-textGray border border-luxe-border hover:text-white transition-all";
+            } else {
+                btnIn.className = "py-3 rounded-xl bg-luxe-gold text-luxe-black font-bold tracking-wider hover:opacity-90 transition-all shadow-md shadow-luxe-gold/10";
+                btnEx.className = "py-3 rounded-xl bg-luxe-black text-luxe-textGray border border-luxe-border hover:text-white transition-all";
+            }
+            populateDropdownCategories();
+        }
+
+        // นำหมวดหมู่มาลงใน Dropdown
+        function populateDropdownCategories() {
+            const select = document.getElementById('category');
+            select.innerHTML = '';
+            luxuryCategories[entryType].forEach(cat => {
+                const opt = document.createElement('option');
+                opt.value = cat.id;
+                opt.textContent = `${cat.icon} ${cat.label}`;
+                select.appendChild(opt);
+            });
+        }
+
+        // สลับแสดงประวัติบัญชีสรุปช่วงเวลา วัน เดือน ปี
+        function setPeriod(period) {
+            currentPeriod = period;
+            ['day', 'month', 'year'].forEach(p => {
+                const btn = document.getElementById(`period${p.charAt(0).toUpperCase() + p.slice(1)}`);
+                btn.className = "flex-1 sm:flex-none px-5 py-2.5 rounded-xl transition-all duration-300 text-luxe-textGray font-semibold tracking-wider";
+            });
+            
+            const activeBtn = document.getElementById(`period${period.charAt(0).toUpperCase() + period.slice(1)}`);
+            activeBtn.className = "flex-1 sm:flex-none px-5 py-2.5 rounded-xl transition-all duration-300 text-luxe-black bg-luxe-gold font-semibold tracking-wider shadow-lg shadow-luxe-gold/10";
+
+            calculateLuxeVault();
+            triggerLuxeToast('🕒 เปลี่ยนมุมมองกางบัญชีเป็นประจำ ' + (period === 'day' ? 'วัน' : period === 'month' ? 'เดือน' : 'ปี'));
+        }
+
+        // ตัวคัดกรองข้อมูลในตารางบัญชีประวัติ
+        function setLedgerFilter(filter) {
+            ledgerFilter = filter;
+            ['all', 'expense', 'income'].forEach(f => {
+                const btn = document.getElementById(`filter${f.charAt(0).toUpperCase() + f.slice(1)}`);
+                btn.className = "px-3 py-1.5 rounded-lg text-luxe-textGray hover:text-white transition-all";
+            });
+            
+            const activeBtn = document.getElementById(`filter${filter.charAt(0).toUpperCase() + filter.slice(1)}`);
+            activeBtn.className = "px-3 py-1.5 rounded-lg bg-luxe-gold text-luxe-black font-semibold transition-all";
+
+            renderLedgerTable();
+        }
+
+        // ป้อนธุรกรรมใหม่ลงระบบ
+        function handleLogEntry(e) {
+            e.preventDefault();
+            const amountInput = document.getElementById('amount');
+            const detailsInput = document.getElementById('details');
+            const categorySelect = document.getElementById('category');
+            const dateInput = document.getElementById('date');
+
+            const amount = parseFloat(amountInput.value);
+            const details = detailsInput.value.trim();
+            const category = categorySelect.value;
+            const date = dateInput.value;
+
+            if (isNaN(amount) || amount <= 0) {
+                triggerLuxeToast('❌ โปรดกรอกจำนวนเงินให้ถูกต้องด้วยนะคะท่านสมาชิก', 'error');
+                return;
+            }
+
+            const newLog = {
+                id: Date.now().toString(),
+                date,
+                details,
+                amount,
+                type: entryType,
+                category
+            };
+
+            transactions.unshift(newLog);
+            localStorage.setItem('aura_luxe_ledger', JSON.stringify(transactions));
+            
+            // เคลียร์แบบหรูหรา
+            amountInput.value = '';
+            detailsInput.value = '';
+
+            refreshLuxeApp();
+            triggerLuxeToast('✨ ส่งผ่านข้อมูลรายการเข้ารหัสเข้าสู่พอร์ตของท่านแล้วค่ะ');
+
+            // อัปเดตคำพูดเอวี่ตอบสนองต่อผู้ใช้งานจริง
+            document.getElementById('aiDialogueText').textContent = `เอวี่ประมวลผลข้อมูลใหม่สำเร็จ! ระบบความปลอดภัยของ AURA LUXE ได้ทำการเข้ารหัสและจัดเรียงรายการ "${details}" มูลค่า ฿${amount.toLocaleString()} ไว้ให้ท่านแล้วค่ะ อยากให้เอวี่กางจุดประหยัดเงินเพิ่มเติมจากยอดนี้ด้วยไหมคะ?`;
+            
+            // เอวี่เรียนรู้เพิ่มขึ้น 1% ทุกครั้งที่ทำธุรกรรมใหม่
+            updateAvieBrainProgress(1);
+        }
+
+        // ลบธุรกรรมแบบรวดเร็ว
+        function deleteLog(id) {
+            transactions = transactions.filter(t => t.id !== id);
+            localStorage.setItem('aura_luxe_ledger', JSON.stringify(transactions));
+            refreshLuxeApp();
+            triggerLuxeToast('🗑️ นำรายการถอนการเข้ารหัสเรียบร้อยแล้วค่ะ');
+        }
+
+        // คำนวณสรุปผลยอดทั้งหมดใน Dashboard
+        function calculateLuxeVault() {
+            let totalIn = 0;
+            let totalOut = 0;
+            const todayStr = new Date().toISOString().split('T')[0];
+            const currentMonth = todayStr.substring(0, 7);
+            const currentYear = todayStr.substring(0, 4);
+
+            transactions.forEach(t => {
+                let match = false;
+                if (currentPeriod === 'day' && t.date === todayStr) match = true;
+                if (currentPeriod === 'month' && t.date.startsWith(currentMonth)) match = true;
+                if (currentPeriod === 'year' && t.date.startsWith(currentYear)) match = true;
+
+                if (match) {
+                    if (t.type === 'income') totalIn += t.amount;
+                    else totalOut += t.amount;
+                }
+            });
+
+            const balance = totalIn - totalOut;
+
+            document.getElementById('dashIncome').textContent = `฿${totalIn.toLocaleString('th-TH', { minimumFractionDigits: 2 })}`;
+            document.getElementById('dashExpense').textContent = `฿${totalOut.toLocaleString('th-TH', { minimumFractionDigits: 2 })}`;
+            document.getElementById('dashBalance').textContent = `฿${balance.toLocaleString('th-TH', { minimumFractionDigits: 2 })}`;
+
+            // การบอกสัดส่วนเปอร์เซ็นต์ค่าใช้จ่ายที่เกิดขึ้นจริงเมื่อเทียบกับรายรับของรอบนั้นๆ
+            const ratio = totalIn > 0 ? Math.round((totalOut / totalIn) * 100) : 0;
+            document.getElementById('expenseRatioBadge').textContent = `💸 คิดเป็น ${ratio}% ของรายรับทั้งหมด`;
+        }
+
+        // วาดและประเมินสถิติวาดกราฟวงกลมสีทอง
+        function renderGoldChart() {
+            const svg = document.getElementById('pieSvg');
+            const legend = document.getElementById('chartLegend');
+            const centerTotal = document.getElementById('pieCenterTotal');
+
+            const expenses = transactions.filter(t => t.type === 'expense');
+            const totalExpense = expenses.reduce((sum, item) => sum + item.amount, 0);
+
+            centerTotal.textContent = `฿${Math.round(totalExpense).toLocaleString()}`;
+
+            if (totalExpense === 0) {
+                svg.innerHTML = `<circle cx="16" cy="16" r="14" fill="transparent" stroke="#1c1c1f" stroke-width="3" />`;
+                legend.innerHTML = `<p class="text-center text-luxe-textGray italic py-2">ไม่มีข้อมูลเพื่อวิเคราะห์ไลฟ์สไตล์</p>`;
+                return;
+            }
+
+            // คำนวณรายจ่ายตามหมวดหมู่
+            const sums = {};
+            expenses.forEach(t => {
+                sums[t.category] = (sums[t.category] || 0) + t.amount;
+            });
+
+            const sorted = Object.entries(sums).sort((a,b) => b[1] - a[1]);
+
+            let accumulatedPercent = 0;
+            let svgContent = `<circle cx="16" cy="16" r="14" fill="transparent" stroke="#1c1c1f" stroke-width="3" />`;
+            let legendContent = '';
+
+            sorted.forEach(([catId, amount], index) => {
+                const percent = amount / totalExpense;
+                const strokeArray = percent * 88;
+                const strokeOffset = -accumulatedPercent * 88;
+                const color = goldScalePalette[index % goldScalePalette.length];
+
+                svgContent += `
+                    <circle cx="16" cy="16" r="14" fill="transparent" 
+                            stroke="${color}" 
+                            stroke-width="3" 
+                            stroke-dasharray="${strokeArray} 88" 
+                            stroke-dashoffset="${strokeOffset}"
+                            class="transition-all duration-300 cursor-pointer hover:stroke-[4px]" />
+                `;
+
+                const catObj = luxuryCategories.expense.find(c => c.id === catId) || { label: 'อื่นๆ', icon: '📦' };
+
+                legendContent += `
+                    <div class="flex items-center justify-between pb-1.5 border-b border-luxe-border/40">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2.5 h-2.5 rounded-full" style="background-color: ${color}"></span>
+                            <span class="text-gray-300 font-light">${catObj.icon} ${catObj.label}</span>
+                        </div>
+                        <div class="font-mono text-right text-[11px]">
+                            <span class="text-white font-bold">฿${amount.toLocaleString()}</span>
+                            <span class="text-luxe-gold ml-1">(${Math.round(percent * 100)}%)</span>
+                        </div>
+                    </div>
+                `;
+
+                accumulatedPercent += percent;
+            });
+
+            svg.innerHTML = svgContent;
+            legend.innerHTML = legendContent;
+        }
+
+        // แสดงผลบัญชีตาราง (Luxury Ledger Table)
+        function renderLedgerTable() {
+            const tbody = document.getElementById('ledgerTableBody');
+            const noData = document.getElementById('noDataView');
+            tbody.innerHTML = '';
+
+            let filtered = transactions;
+
+            // คัดกรองจากประเภท
+            if (ledgerFilter !== 'all') {
+                filtered = filtered.filter(t => t.type === ledgerFilter);
+            }
+
+            if (filtered.length === 0) {
+                noData.classList.remove('hidden');
+                return;
+            } else {
+                noData.classList.add('hidden');
+            }
+
+            filtered.forEach(t => {
+                const isExp = t.type === 'expense';
+                const catObj = luxuryCategories[t.type].find(c => c.id === t.category) || { label: 'อื่นๆ', icon: '📦', importance: 'want' };
+                
+                // รูปแบบสติกเกอร์แยกหมวดหมู่ AI บ่งบอกความจำเป็น
+                let badge = `<span class="px-2.5 py-1 bg-emerald-950/60 text-emerald-400 border border-emerald-800 rounded-full text-[10px] tracking-wider uppercase font-semibold">INCOME (ไหลเข้า)</span>`;
+                if (isExp) {
+                    badge = catObj.importance === 'need'
+                        ? `<span class="px-2.5 py-1 bg-blue-950/60 text-blue-300 border border-blue-900 rounded-full text-[10px] tracking-wider font-semibold">NEED (จำเป็น)</span>`
+                        : `<span class="px-2.5 py-1 bg-amber-950/60 text-luxe-gold border border-luxe-gold/30 rounded-full text-[10px] tracking-wider font-semibold">WANT (ฟุ่มเฟือย)</span>`;
+                }
+
+                const displayDate = new Date(t.date).toLocaleDateString('th-TH', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: '2-digit'
+                });
+
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-luxe-border/20 transition-all duration-300";
+                tr.innerHTML = `
+                    <td class="py-4 pl-2 font-mono text-[11px] text-luxe-textGray">${displayDate}</td>
+                    <td class="py-4">
+                        <p class="font-semibold text-white text-xs">${t.details}</p>
+                        <span class="text-[10px] text-luxe-textGray block mt-0.5">${catObj.icon} ${catObj.label}</span>
+                    </td>
+                    <td class="py-4 text-center">${badge}</td>
+                    <td class="py-4 text-right font-mono font-bold text-xs ${isExp ? 'text-gray-200' : 'text-emerald-400'}">
+                        ${isExp ? '-' : '+'}${t.amount.toLocaleString('th-TH', { minimumFractionDigits: 2 })}
+                    </td>
+                    <td class="py-4 text-center">
+                        <button onclick="deleteLog('${t.id}')" class="p-1 text-luxe-textGray hover:text-rose-500 transition-all">✕</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // ระบบแสดงการแจ้งเตือน (Custom Toast)
+        function triggerLuxeToast(message, type = 'success') {
+            const toast = document.getElementById('luxeToast');
+            const msg = document.getElementById('toastMessage');
+            const icon = document.getElementById('toastIcon');
+
+            msg.textContent = message;
+            icon.textContent = type === 'success' ? '👑' : '⚠️';
+
+            toast.className = "fixed bottom-6 right-6 z-50 transform translate-y-0 opacity-100 transition-all duration-500 bg-luxe-card border-2 border-luxe-gold/50 text-white px-5 py-4 rounded-2xl shadow-2xl flex items-center space-x-3";
+
+            setTimeout(() => {
+                toast.className = "fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-500 bg-luxe-card border-2 border-luxe-gold/50 text-white px-5 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 pointer-events-none";
+            }, 3000);
+        }
+
+        // ปรับปรุงบาร์พัฒนาความรู้ของเอวี่ (Machine Learning Experience)
+        function updateAvieBrainProgress(increment) {
+            avieBrainLeveL = Math.min(avieBrainLeveL + increment, 100);
+            localStorage.setItem('avie_brain_level', avieBrainLeveL);
+            document.getElementById('aiKnowledgeProgress').textContent = `${avieBrainLeveL}%`;
+            document.getElementById('aiKnowledgeBar').style.width = `${avieBrainLeveL}%`;
+        }
+
+        // ฟังก์ชันระบบ AI: การวิเคราะห์คัดแยกความจำเป็น (Need) และความอยากได้ส่วนตัว (Want)
+        function aiSieveNecessity() {
+            const rBox = document.getElementById('aiReportBox');
+            const rContent = document.getElementById('aiReportContent');
+            rBox.classList.remove('hidden');
+
+            const expenses = transactions.filter(t => t.type === 'expense');
+            let needVal = 0;
+            let wantVal = 0;
+
+            expenses.forEach(t => {
+                const cat = luxuryCategories.expense.find(c => c.id === t.category);
+                if (cat && cat.importance === 'need') {
+                    needVal += t.amount;
+                } else {
+                    wantVal += t.amount;
+                }
+            });
+
+            document.getElementById('aiDialogueText').textContent = "เอวี่สแกนพอร์ตและกางโครงสร้างรายจ่ายเสร็จสมบูรณ์ค่ะ และจำแนกตามมาตรฐาน Wealth-Sieving เรียบร้อย ดูด้านล่างนี้เลยค่ะ";
+
+            rContent.innerHTML = `
+                <div class="space-y-2">
+                    <p class="text-white font-medium">📋 ยอดกางวิเคราะห์แบ่งกลุ่มตามจริง:</p>
+                    <div class="grid grid-cols-2 gap-2 text-xs py-1">
+                        <div class="bg-luxe-black p-2.5 rounded-xl border border-luxe-border">
+                            <span class="text-[9px] text-blue-300 uppercase block">ความจำเป็น (Needs)</span>
+                            <span class="font-mono text-white font-bold">฿${needVal.toLocaleString()}</span>
+                        </div>
+                        <div class="bg-luxe-black p-2.5 rounded-xl border border-luxe-border">
+                            <span class="text-[9px] text-luxe-gold uppercase block">ความสุข (Wants)</span>
+                            <span class="font-mono text-luxe-goldLight font-bold">฿${wantVal.toLocaleString()}</span>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-gray-400 font-light mt-2">
+                        💡 <b>เอวี่วิเคราะห์ผลลัพธ์:</b> คุณมียอดสัดส่วนค่าใช้จ่ายที่ไม่จำเป็นสำหรับพยุงชีพพื้นฐานอยู่ที่ ${needVal + wantVal > 0 ? Math.round((wantVal / (needVal + wantVal)) * 100) : 0}% ของค่าใช้จ่ายทั้งหมด
+                    </p>
+                </div>
+            `;
+            updateAvieBrainProgress(2);
+        }
+
+        // ฟังก์ชันระบบ AI: แนะนำแผนจุดลดรายจ่าย / แนะนำจุดที่ตัดเพื่อช่วยประหยัดเงิน
+        function aiAdviseBudgetReduction() {
+            const rBox = document.getElementById('aiReportBox');
+            const rContent = document.getElementById('aiReportContent');
+            rBox.classList.remove('hidden');
+
+            const wants = transactions.filter(t => {
+                if (t.type !== 'expense') return false;
+                const cat = luxuryCategories.expense.find(c => c.id === t.category);
+                return cat && cat.importance === 'want';
+            });
+
+            document.getElementById('aiDialogueText').textContent = "เอวี่รวบรวมตัวเลือกและกางแผนจำกัดความเสี่ยง เพื่อตัดรายจ่ายที่ไม่ส่งผลกระทบต่อคุณภาพชีวิตหลักของคุณผู้ชายมาให้เรียบร้อยแล้วค่ะ";
+
+            if (wants.length === 0) {
+                rContent.innerHTML = `
+                    <p class="text-luxe-gold">✨ ยอดเยี่ยมเหนือคำบรรยายค่ะ!</p>
+                    <p class="text-[11px] text-gray-400 font-light leading-relaxed">
+                        ขณะนี้ไม่มีพฤติกรรมการใช้จ่ายส่วนเกินฟุ่มเฟือยเลยในพอร์ตระบบปัจจุบันของคุณ แผนการเงินคงที่และมั่งคั่งอย่างเต็มประสิทธิภาพค่ะ!
+                    </p>
+                `;
+                return;
+            }
+
+            let adviceHtml = `<div class="space-y-3">
+                <p class="text-luxe-goldLight font-medium">📋 แนะนำจุดตัดที่ช่วยประหยัดเงินได้ในทันที:</p>
+                <div class="space-y-2 max-h-[150px] overflow-y-auto pr-1">`;
+            
+            let totalPotentialSaving = 0;
+            wants.forEach(item => {
+                const annualSaving = item.amount * 12; // จำลองประหยัดเป็นรายปี
+                totalPotentialSaving += item.amount;
+                adviceHtml += `
+                    <div class="bg-luxe-black/80 p-2.5 rounded-xl border border-luxe-border/80">
+                        <div class="flex justify-between font-bold">
+                            <span class="text-white">${item.details}</span>
+                            <span class="text-rose-400">- ฿${item.amount.toLocaleString()}</span>
+                        </div>
+                        <p class="text-[10px] text-luxe-textGray mt-1">
+                            💡 ประหยัดได้ต่อปีสูงถึง: <span class="text-emerald-400 font-mono">฿${annualSaving.toLocaleString()}</span> หากเปลี่ยนยอดนี้เป็นเงินออม
+                        </p>
+                    </div>`;
+            });
+
+            adviceHtml += `</div>
+                <div class="p-3 bg-luxe-gold/5 rounded-xl border border-luxe-gold/20 mt-2">
+                    <p class="text-[11px] text-luxe-goldLight">
+                        🏆 <b>แผนสรุปผลรวมกระแสเงินสะสมเพิ่มพูน:</b> หากท่านปรับลดสิ่งฟุ่มเฟือยข้างต้น จะเพิ่มกระแสเงินสดกลับเข้ามาทันที <span class="font-bold text-white">฿${totalPotentialSaving.toLocaleString()}</span> ต่อเดือนค่ะ!
+                    </p>
+                </div>
+            </div>`;
+
+            rContent.innerHTML = adviceHtml;
+            updateAvieBrainProgress(3);
+        }
+
+        // ฟังก์ชันระบบจำลองการสอน AI (Machine Learning Interaction)
+        function aiInteractiveLearning() {
+            const rBox = document.getElementById('aiReportBox');
+            const rContent = document.getElementById('aiReportContent');
+            rBox.classList.remove('hidden');
+
+            document.getElementById('aiDialogueText').textContent = "เอวี่เปิดระบบรับคำสอนพิเศษแล้วค่ะ! ข้อมูลทางการเงินและพฤติกรรมนี้จะบันทึกเพิ่มเข้าสู่ฐานโมเดลคำนวณสมองส่วนลึกของเอวี่โดยตรง";
+
+            rContent.innerHTML = `
+                <div class="space-y-3">
+                    <p class="text-white font-medium">💡 จำลองส่งฐานข้อมูลคำสั่งสอนให้ AI เรียนรู้เพิ่ม:</p>
+                    <div class="space-y-2 text-[11px]">
+                        <button onclick="teachAvieTopic('invest')" class="w-full text-left p-2.5 bg-luxe-black rounded-xl border border-luxe-border hover:border-luxe-gold/40 transition-all text-gray-300">
+                            📈 สอนให้เน้นวินัยการออมและการลงทุนเชิงรุก (พอร์ตลงทุน)
+                        </button>
+                        <button onclick="teachAvieTopic('frugal')" class="w-full text-left p-2.5 bg-luxe-black rounded-xl border border-luxe-border hover:border-luxe-gold/40 transition-all text-gray-300">
+                            🛡️ สอนให้ประเมินความปลอดภัย ประหยัด ปลอดหนี้สินระยะสั้น
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function teachAvieTopic(topic) {
+            updateAvieBrainProgress(4);
+            const dialog = document.getElementById('aiDialogueText');
+            
+            if (topic === 'invest') {
+                dialog.textContent = "เอวี่ทำการอัปเกรดโมเดลการเรียนรู้เชิงลึกแล้วค่ะ! ต่อไปนี้เอวี่จะเน้นไปที่การประเมินยอดนำไปลงสินทรัพย์ พอร์ตหุ้น และสะสมทองคำ พร้อมผลักดันคุณผู้ชายให้สร้างกระแส Passive Income เพิ่มขึ้นอย่างพรีเมียมค่ะ";
+            } else {
+                dialog.textContent = "รับทราบค่ะ! เอวี่ปรับโหมดวิเคราะห์เป็นแนวระมัดระวังสูงสุด จะคอยกางบัญชีอย่างเข้มงวดและแนะนำให้ท่านลดค่าใช้จ่ายตามใจอารมณ์ลง เพื่อปกป้องสภาพคล่องทางการเงินให้มั่นคงที่สุดค่ะ";
+            }
+            
+            document.getElementById('aiReportBox').classList.add('hidden');
+            triggerLuxeToast('🧠 โมเดลปัญญาประดิษฐ์เอวี่อัปเดตระบบเรียบร้อยค่ะ');
+        }
+
+        function refreshLuxeApp() {
+            populateDropdownCategories();
+            calculateLuxeVault();
+            renderGoldChart();
+            renderLedgerTable();
+        }
+    </script>
+</body>
+</html>
+
+```
